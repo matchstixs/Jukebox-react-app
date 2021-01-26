@@ -41,14 +41,15 @@ body {
 
 .c-player > h4 {
   color: #aaaaaa;
-  font-size: 26px;
+  font-size: 23px;
+  margin-bottom: 15px;
   text-align: center;
   font-weight: 400;
 }
 
 .c-detail--title {
   color: #eeeeee;
-  font-size: 18px;
+  margin-top: 15px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.8), -2px -2px 4px rgba(225,225,225,0.4);
   text-align: center;
 }
@@ -61,7 +62,8 @@ body {
 
 .c-detail--artist {
   color: #aaaaaa;
-  font-size: 16 px;
+  margin-bottom: 20px;
+  font-size: 18 px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.8), -2px -2px 4px rgba(225,225,225,0.4);
   text-align: center;
 }

@@ -2,7 +2,7 @@
 
 * Allows users to Play / Pause / Skip through songs on a playlist
 
-* Showcasing the usage of components in React
+* Showcasing the usage of components and React hooks.
 
 #### V.1
 

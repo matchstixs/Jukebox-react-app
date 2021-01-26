@@ -1,13 +1,17 @@
 import { faDivide } from '@fortawesome/free-solid-svg-icons';
-import {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import Player from './components/Player'
 
 function App() {
+  // hooks can only be used within functions not class ie, [Class app extends react]
+  // useState hook; useState(default state)
+  // returns array of 2 values [currentState, updateState()]
   const [songs] = useState([
     // ADD SONGS TO APP
     // {
     //   title: "SONG NAME",
     //   artist: "ARTIST NAME",
+    //   image_src: "IMAGE LOCATION",
     //   src: "SONG LOCATION"
     // },
     // SONG 1
@@ -22,7 +26,7 @@ function App() {
     title: "Girls Like You",
     artist: "Boyce Avenue - Maroon5 cover",
     img_src: "./image/girls.jpeg",
-    src: "./music/Girls-Like-You_ Maroon5_(Boyce Avenue_acoustic_cover).mp3"
+    src: "./music/Girls-Like-You_Maroon5_(Boyce Avenue_acoustic_cover).mp3"
     },
     // SONG 3
     {
@@ -37,22 +41,35 @@ function App() {
     artist: "Adrian Wilson - Callum Scott cover)",
     img_src: "./image/reason.jpeg",
     src: "./music/You-Are-The-Reason_Callum_Scott_(Adrian_Wilson_cover).mp3"
-    }]
-  )
+    }
+  ]);
 
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
-  const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
+  // [count, setCount] = useState(default)
+  const nextSongIndex = currentSongIndex >= songs.length ? 0 : currentSongIndex + 1;
+
+  useEffect(() => {
+    if (currentSongIndex + 1 > songs.length - 1) {
+      return 0;
+    } else {
+      return currentSongIndex + 1;
+    };
+  }, [currentSongIndex]);
+
+// only call this function when [ ] updates
+
+
 
   return(
     <div>
-      <Player song={songs[currentSongIndex]} nextSong={songs[nextSongIndex]} />
+      <Player 
+      currentSongIndex={currentSongIndex}
+      setCurrentSongIndex={setCurrentSongIndex}
+      nextSongIndex={nextSongIndex}
+      songs={songs}
+      />
     </div>
   )
-
-
-
-
-
 
 
 }

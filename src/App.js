@@ -1,77 +1,68 @@
-import { faDivide } from '@fortawesome/free-solid-svg-icons';
-import React, {useState, useEffect} from 'react'
-import Player from './components/Player'
+import React, { useEffect, useState } from 'react';
+import SpotifyWebApi from 'spotify-web-api-js';
+import './App.css';
+import store from './store'
+// pass components
+import Login from './components/Login.js';
+import Player from './components/Player.js';
+import { getTokenFromResponse} from './spotify';
+import setUser from './slice.js'
+import { useDispatch } from 'react-redux'
+
+// spotify constructor that allows communication to and from
+const spotify = new SpotifyWebApi();
 
 function App() {
-  // hooks can only be used within functions not class ie, [Class app extends react]
-  // useState hook; useState(default state)
-  // returns array of 2 values [currentState, updateState()]
-  const [songs] = useState([
-    // ADD SONGS TO APP
-    // {
-    //   title: "SONG NAME",
-    //   artist: "ARTIST NAME",
-    //   image_src: "IMAGE LOCATION",
-    //   src: "SONG LOCATION"
-    // },
-    // SONG 1
-    {
-    title: "Fly Me To The Moon",
-    artist: "Frank Sinatra",
-    img_src: "./image/fly.jpeg",
-    src: "./music/Fly-Me-to-The-Moon.mp3"
-    },
-    // SONG 2
-    {
-    title: "Girls Like You",
-    artist: "Boyce Avenue - Maroon5 cover",
-    img_src: "./image/girls.jpeg",
-    src: "./music/Girls-Like-You_Maroon5_(Boyce Avenue_acoustic_cover).mp3"
-    },
-    // SONG 3
-    {
-    title: "Perfect",
-    artist: "Emma Heesters & KHS - Ed Sheeran cover",
-    img_src: "./image/perfect.jpeg",
-    src: "./music/PERFECT_EdSheeran_(EMMA_HEESTERS_&_KHS_COVER).mp3"
-    },
-    // SONG 4
-    {
-    title: "You Are The Reason",
-    artist: "Adrian Wilson - Callum Scott cover)",
-    img_src: "./image/reason.jpeg",
-    src: "./music/You-Are-The-Reason_Callum_Scott_(Adrian_Wilson_cover).mp3"
-    }
-  ]);
+  // state
+  const [token, setToken] = useState(null);
+  
+  const dispatch = useDispatch()
 
-  const [currentSongIndex, setCurrentSongIndex] = useState(0);
-  // [count, setCount] = useState(default)
-  const nextSongIndex = currentSongIndex >= songs.length ? 0 : currentSongIndex + 1;
-
+  // react hook: useEffect()
   useEffect(() => {
-    if (currentSongIndex + 1 > songs.length - 1) {
-      return 0;
-    } else {
-      return currentSongIndex + 1;
+    // condition
+    const hash = getTokenFromResponse();
+    // hide token from being viewed on public url
+    window.location.hash = "";
+    // parse access_token from hash object
+    const _token = hash.access_token;
+
+    if (_token) {
+      setToken(_token);
+
+      // connect access token to api
+      spotify.setAccessToken(_token);
+      // grab username
+      spotify.getMe().then(data => {
+        // data {
+        //   display_name,
+        //   followers,
+        //   images
+        // }
+        // console.log(data.display_name);
+        const name = data.display_name
+        console.log(name)
+        dispatch(setUser(name))
+      })
     };
-  }, [currentSongIndex]);
+    
+  }, []); 
 
-// only call this function when [ ] updates
+console.log(store.getState())
 
+  return (
+    <div className="App">
 
+    {/* logo image */}
 
-  return(
-    <div>
-      <Player 
-      currentSongIndex={currentSongIndex}
-      setCurrentSongIndex={setCurrentSongIndex}
-      nextSongIndex={nextSongIndex}
-      songs={songs}
-      />
+    { token? (
+      < Player />
+    ) : (
+      < Login />
+    )}
+
     </div>
-  )
-
-
+  );
 }
 
 export default App;

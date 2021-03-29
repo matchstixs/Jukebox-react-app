@@ -1,61 +1,27 @@
-import React, {useState, useRef, useEffect} from 'react'
-import PlayerDetails from './PlayerDetails'
-import PlayerControls from './PlayerControls'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 
-function Player(props) {
-    const audioEl = useRef(null);
-    // audioEl.current == ref={audioEl}
+// useSelector hook, reads redux data/store in components
+// selector functions, can be written by taking state as an argument and return some part of the state value
 
-    const [isPlaying, setIsPlaying] = useState(false);
+// useDispatch hook, pushes actions to components
 
-    useEffect(() => {
-        if (isPlaying) {
-            audioEl.current.play();
-        } else {
-            audioEl.current.pause();
-        }
-    });
+const showUser = state => state.data
+// data is undefined
 
-    // 2 functions written within SkipSong forwards + backwards
-    const SkipSong = (forwards = true) => {
-        if (forwards) {
-            props.setCurrentSongIndex(
-               () => {
-                   let temp = props.currentSongIndex;
-                   temp++;
-                // FORWARDS
-                   if (temp > props.songs.length -1) {
-                       temp = 0;
-                   };
-                return temp;
-               })
-        } else {  
-                let temp = props.currentSongIndex;
-                temp--;
-            // BACKWARDS
-                if (temp < 0) {
-                    temp = props.songs.length - 1;
-                };
-             return temp;
-        }
-    }
+
+
+function Player() {
+    const users = useSelector(showUser);
+        console.log(users);
+
 
     return (
-        <div className="c-player">
-            <audio src={props.songs[props.currentSongIndex].src} ref={audioEl}></audio>
-            {/* pass songs array from app.js and to run skip song function */}
-            <h4>Now Playing</h4>
-            <PlayerDetails song={props.songs[props.currentSongIndex]} />
-            <PlayerControls 
-            isPlaying={isPlaying}
-            setIsPlaying={setIsPlaying}
-            SkipSong={SkipSong}
-            /> 
-            <p><i><strong>Next:</strong> {props.songs[props.nextSongIndex].title} by {props.songs[props.nextSongIndex].artist}</i></p>
+        <div>
+            <h1>Player Component</h1>
+
         </div>
     )
-
-
 }
- 
-export default Player
+
+export default Player; 

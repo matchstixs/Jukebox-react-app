@@ -1,23 +1,31 @@
-#### Single page music player app written in react
+music player on react
 
-* Allows users to Play / Pause / Skip through songs on a playlist
+-use spotify api
+-user authentication
+-material ui
+-context api, elimates need for redux state-manager, no need for boilerplate code
+-react hooks, allow for component lifecycle without the use of class
 
-* Showcasing the usage of components and React hooks.
+- [X] login (ui, auth integration)
+- [] player (pass username to player component)
 
-#### V.1
 
--Built out app design
+# Getting Started with Create React App
 
-#### Deploy the site by running `npm run start`
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-On the Terminal run:
+## Available Scripts
 
-```
-npm run start
-```
+In the project directory, you can run:
 
-#### To do
+### `npm start`
 
--Create app functionality
+bares84355@heroulo.com
+Asdfg1234
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)
+Client ID 4cfdccedba734c97a93964ca4921c124
+
+2:10
+spotify clone reactjs
+
+store is returning initial state user after login, instead of updated user

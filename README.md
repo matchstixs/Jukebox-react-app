@@ -3,8 +3,8 @@ music player on react
 -use spotify api
 -user authentication
 -material ui
--context api, elimates need for redux state-manager, no need for boilerplate code
 -react hooks, allow for component lifecycle without the use of class
+-reduxToolKit, redux with the use of react hook
 
 - [X] login (ui, auth integration)
 - [] player (pass username to player component)

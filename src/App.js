@@ -6,7 +6,8 @@ import store from './store'
 import Login from './components/Login.js';
 import Player from './components/Player.js';
 import { getTokenFromResponse} from './spotify';
-import setUser from './slice.js'
+import { setUser } from './slice.js'
+// if no {} will import slice reducer function instead
 import { useDispatch } from 'react-redux'
 
 // spotify constructor that allows communication to and from

@@ -31,10 +31,11 @@ const userSlice = createSlice({
   // action (state, action)
   // state: current state of 'todo'
   // action:  action being executed [payload]
-    setUser: (state, action) => {
+    setUser: (state, action) => ({
+      ...state,
 // payload, additional info about what happened
-      state.user.push(action.payload)
-    }
+      payload: action.data
+    })
   //   finalAction: (state, action) => ({
   //     ...state,
   //     otherProperty: action.payload,

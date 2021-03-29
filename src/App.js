@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import SpotifyWebApi from 'spotify-web-api-js';
 import './App.css';
-import store from './store'
+import { getTokenFromResponse} from './spotify';
+// if no {} will import slice reducer function instead
+import { setUser } from './slice.js'
+import { useDispatch } from 'react-redux'
 // pass components
 import Login from './components/Login.js';
 import Player from './components/Player.js';
-import { getTokenFromResponse} from './spotify';
-import { setUser } from './slice.js'
-// if no {} will import slice reducer function instead
-import { useDispatch } from 'react-redux'
 
 // spotify constructor that allows communication to and from
 const spotify = new SpotifyWebApi();
@@ -16,7 +15,7 @@ const spotify = new SpotifyWebApi();
 function App() {
   // state
   const [token, setToken] = useState(null);
-  
+  // useDispatch hook, pushes actions to components
   const dispatch = useDispatch()
 
   // react hook: useEffect()
@@ -40,16 +39,14 @@ function App() {
         //   followers,
         //   images
         // }
-        // console.log(data.display_name);
         const name = data.display_name
-        console.log(name)
+        // console.log(name)
         dispatch(setUser(name))
+        // console.log(setUser(name))
       })
     };
     
   }, []); 
-
-console.log(store.getState())
 
   return (
     <div className="App">

@@ -28,4 +28,3 @@ Client ID 4cfdccedba734c97a93964ca4921c124
 2:10
 spotify clone reactjs
 
-store is returning initial state user after login, instead of updated user

@@ -1,22 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { loginUrl } from '../spotify'
-import { useDispatch } from 'react-redux'
-import { setUser } from '../slice.js'
-
-// actions need to be dispatched to store
 
 function Login() {
-    const [{user, setUser}] = useState('');
-    const dispatch = useDispatch();
-    
-    const userLogin = () => {
-        console.log(`logging in as ${user}`);
-
-        dispatch(setUser({
-            user: user.display_name
-        }))
-    }
-
     return (
         <div className="login">
 
@@ -28,7 +13,7 @@ function Login() {
             </img>
 
             {/* login with spotify button */}
-            <a href={loginUrl} onClick={userLogin} className="login-button">LOGIN WITH SPOTIFY</a>
+            <a href={loginUrl} className="login-button">LOGIN WITH SPOTIFY</a>
         </div>
     )
 }

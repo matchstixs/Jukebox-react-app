@@ -34,7 +34,7 @@ const userSlice = createSlice({
     setUser: (state, action) => ({
       ...state,
 // payload, additional info about what happened
-      payload: action.data
+      payload: action.payload
     })
   //   finalAction: (state, action) => ({
   //     ...state,

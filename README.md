@@ -7,7 +7,12 @@ music player on react
 -reduxToolKit, redux with the use of react hook
 
 - [X] login (ui, auth integration)
-- [] player (pass username to player component)
+- [X] player (pass username to player component)
+- [x] playlist component(ui, passed redux to component)
+- [x]controllers component (ui)
+
+pass playlist to playlist component
+https://developer.spotify.com/console/get-current-user-playlists/
 
 
 # Getting Started with Create React App
@@ -25,6 +30,6 @@ Asdfg1234
 
 Client ID 4cfdccedba734c97a93964ca4921c124
 
-2:10
+3:07
 spotify clone reactjs
 

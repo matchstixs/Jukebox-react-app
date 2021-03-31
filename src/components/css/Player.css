@@ -1,0 +1,11 @@
+.whole-player {
+    display: flex;
+}
+
+.song-left {
+  width: 45%;
+}
+
+.playlist-right {
+  width: 55%;
+}

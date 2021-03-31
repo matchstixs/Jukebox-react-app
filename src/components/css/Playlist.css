@@ -1,0 +1,15 @@
+.playlist-component {
+    background-color: #8989bb;
+    background: linear-gradient(315deg, #8989bb 0%, #a5a4cb 74%);
+    color: white;
+    height: 100vh;
+}
+
+.controls-component {
+	position: fixed;
+	bottom: 0;
+	height: 65px;
+	width: 52%;
+	padding: 20px;
+    color: white
+};

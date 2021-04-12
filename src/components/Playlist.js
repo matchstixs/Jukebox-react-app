@@ -1,25 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './css/Playlist.css';
 import Controls from './Controls.js';
+import Header from './Header.js';
 
-const Playlist = ({user}) => {
-    return (
-        <div>
+const Playlist = ({ user, image, spotify, playlistImage, playlistTitle, playlistTracks }) => {
 
-        <div className='playlist-component'>
-            <h1>Playlist for {user}</h1>
-            {/* playlist description */}
-            {/* playlist title */}
 
-            {/* playlist songs */}
-        </div>
+  return (
+    <div>
 
-        <div className='controls-component'>
-        < Controls />
-        </div>
+      <div className='playlist-component'>
+          {/* header: search, profile_picture, username */}
+          < Header user={user} image={image} spotify={spotify}/>
 
-        </div>
-    )
-}
+          {/* playlist info */}
+          <div className='playlist-info'>
+
+            {/* playlist image */}
+          < img className='playlist_picture' src={ playlistImage } alt="playlist_picture" />
+
+          {/* playlist title */}
+          <h1> { playlistTitle } </h1>
+
+          {/* playlist tracks */}
+
+
+          </div>
+      </div>
+
+      <div className='controls-component'>
+      < Controls />
+      </div>
+
+    </div>
+)
+  }
 
 export default Playlist

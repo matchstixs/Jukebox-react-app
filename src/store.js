@@ -1,19 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-// allows for actions to return function instead of object
-import thunkMiddleware from 'redux-thunk';
 // import individual reducer functions
-import userReducer from './slice.js';
-
-
-// const exampleThunkFunction = (dispatch, getState) => {
-//  const stateBefore = getState()
-
-// store.dispatch(exampleThunkFunction)
-
+import userReducer from './components/slice/userSlice.js'
+import imageReducer from './components/slice/imageSlice.js'
+import playlistReducer from './components/slice/playlistSlice.js'
 
 export default configureStore({
   reducer: {
     // state: reducer function
-    user: userReducer
-  }, thunkMiddleware
+    user: userReducer,
+    image: imageReducer,
+    playlist: playlistReducer
+  }
 });

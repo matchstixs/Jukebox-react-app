@@ -17,6 +17,7 @@ const scopes = [
     "user-modify-playback-state",
     "user-read-currently-playing",
     "user-read-recently-played",
+    "user-top-read"
 ];
 
 export const getTokenFromResponse = () => {
@@ -32,7 +33,6 @@ export const getTokenFromResponse = () => {
         let parts = item.split('=');
         // initial array returned split = and decode the key 
         initial[parts[0]] = decodeURIComponent(parts[1]);
-
         return initial;
     }, {});
 };

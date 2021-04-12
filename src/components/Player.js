@@ -8,16 +8,21 @@ import Playlist from './Playlist.js';
 
 // selector function
 // written by taking state as an argument and return some part of the state value
-const showUser = state => state.user.payload
-// data is undefined
+const selectUser = state => state.user.payload
+const selectImage = state => state.image.payload
+const selectPlaylistTitle = state => state.playlist.payload
+const selectPlaylistImage = state => state.playlist.payload
+const selectPlaylistTracks = state => state.playlist.payload
 
-function Player() {
-    const user = useSelector(showUser);
+function Player({ spotify}) {
+    const user = useSelector(selectUser);
+    const image = useSelector(selectImage);
+    const playlistImage = useSelector(selectPlaylistImage);
+    const playlistTitle = useSelector(selectPlaylistTitle);
+    const playlistTracks = useSelector(selectPlaylistTracks);
 
     return (
         <div>
-            {/* <h1>Player Component for {user}</h1> */}
-
             <div className="whole-player">
                 
             {/* <h1>Player Component for {user}</h1> */}
@@ -29,7 +34,7 @@ function Player() {
 
             <div className="playlist-right">
             {/* right side player component */}
-            < Playlist user={user}/>
+            < Playlist user={user} image={image} spotify={spotify} playlistImage={playlistImage} playlistTitle={playlistTitle} playlistTracks={playlistTracks} />
             {/* ^ contains playlist, controls */}
             </div>
 

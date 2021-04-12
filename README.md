@@ -14,6 +14,11 @@ music player on react
 pass playlist to playlist component
 https://developer.spotify.com/console/get-current-user-playlists/
 
+api call in spotify.js?
+
+https://api.spotify.com/v1/users/{user_id}/playlists
+
+-pass playlist dispatched into player component
 
 # Getting Started with Create React App
 
@@ -30,6 +35,6 @@ Asdfg1234
 
 Client ID 4cfdccedba734c97a93964ca4921c124
 
-3:07
+3:30
 spotify clone reactjs
 

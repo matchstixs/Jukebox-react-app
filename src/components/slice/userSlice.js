@@ -8,9 +8,11 @@ import { createSlice } from '@reduxjs/toolkit';
 // store global state
 const initialState = {
   user : null,
-  // playlists : [],
-  // playing: false,
-  // item: null
+  weeklyPlaylist : null,
+  spotify: null,
+  top_artists: null,
+  playing: false,
+  item: null,
 };
 
 // createSlice(), generate actions, action creators, reducer
@@ -35,18 +37,29 @@ const userSlice = createSlice({
       ...state,
 // payload, additional info about what happened
       payload: action.payload
+    }),
+    setSpotify: (state, action) => ({
+        ...state,
+        spotify: action.spotify,
+    }),
+    setDiscoverWeekly: (state, action) => ({
+      ...state,
+      payload: action.payload
+    }),
+    setPlaylists: (state, action) => ({
+      ...state,
+      payload: action.payload
+    }),
+    setPlaying: (state, action) => ({
+      ...state,
+      payload: action.payload
+    }),
+    setItem: (state, action) => ({
+      ...state,
+      item: action.item
     })
-  //   finalAction: (state, action) => ({
-  //     ...state,
-  //     otherProperty: action.payload,
-  //   }),
-  // },
-  // extraReducers: {
-  //   [someAction.fulfilled]: (state, action) => {
-  //     state.someProperty = action.payload;
-  //   },
   }
 });
 
-export const { setUser } = userSlice.actions;
-export default userSlice.reducer 
+export const { setUser, setSpotify, setDiscoverWeekly, setPlaylists, setPlaying, setItem} = userSlice.actions;
+export default userSlice.reducer;

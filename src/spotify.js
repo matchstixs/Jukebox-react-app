@@ -27,10 +27,10 @@ export const getTokenFromResponse = () => {
     //chop url into substring starting with index 1 
     .substring(1)
     // remove (character) + return array
-    .split('&')
+    .split("&")
     // subtract (character) in array, starting from left
     .reduce((initial, item) => {
-        let parts = item.split('=');
+        let parts = item.split("=");
         // initial array returned split = and decode the key 
         initial[parts[0]] = decodeURIComponent(parts[1]);
         return initial;
@@ -38,4 +38,4 @@ export const getTokenFromResponse = () => {
 };
 
 // http://localhost:3000/#access_token=secret_token&token_type=Bearer&expires_in=3600
-export const loginUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scopes=${scopes.join('%20')}&response_type=token&show_dialog=true`;
+export const loginUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scopes=${scopes.join("%20")}&response_type=token&show_dialog=true`;

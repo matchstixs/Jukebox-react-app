@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 // materialui icons
-import ShuffleIcon from '@material-ui/icons/Shuffle';
-import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
-import PlayCircleOutlineRoundedIcon from '@material-ui/icons/PlayCircleOutlineRounded';
-import SkipNextIcon from '@material-ui/icons/SkipNext';
-import RepeatIcon from '@material-ui/icons/Repeat';
-import VolumeUpOutlinedIcon from '@material-ui/icons/VolumeUpOutlined';
-import { Slider, Grid } from '@material-ui/core';
+import ShuffleIcon from "@material-ui/icons/Shuffle";
+import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
+import PlayCircleOutlineRoundedIcon from "@material-ui/icons/PlayCircleOutlineRounded";
+import SkipNextIcon from "@material-ui/icons/SkipNext";
+import RepeatIcon from "@material-ui/icons/Repeat";
+import VolumeUpOutlinedIcon from "@material-ui/icons/VolumeUpOutlined";
+import { Slider, Grid } from "@material-ui/core";
 
 
 

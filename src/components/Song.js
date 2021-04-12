@@ -1,5 +1,5 @@
-import React from 'react'
-import './css/Song.css'
+import React from "react"
+import "./css/Song.css"
 
 const Song = () => {
     return (

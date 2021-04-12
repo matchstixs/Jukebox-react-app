@@ -1,7 +1,7 @@
-import React from 'react';
-import './css/Volume.css'
-import VolumeUpOutlinedIcon from '@material-ui/icons/VolumeUpOutlined';
-import { Slider } from '@material-ui/core';
+import React from "react";
+import "./css/Volume.css"
+import VolumeUpOutlinedIcon from "@material-ui/icons/VolumeUpOutlined";
+import { Slider } from "@material-ui/core";
 
 function Volume() {
     return (

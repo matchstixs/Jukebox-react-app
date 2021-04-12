@@ -1,5 +1,5 @@
-import React from 'react';
-import { loginUrl } from '../spotify'
+import React from "react";
+import { loginUrl } from "../spotify"
 
 function Login() {
     return (

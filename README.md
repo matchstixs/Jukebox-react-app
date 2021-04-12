@@ -3,22 +3,15 @@ music player on react
 -use spotify api
 -user authentication
 -material ui
--react hooks, allow for component lifecycle without the use of class
--reduxToolKit, redux with the use of react hook
+-reduxToolKit, redux with the use of react hooks; allows for component lifecycle without the use of class
 
 - [X] login (ui, auth integration)
 - [X] player (pass username to player component)
-- [x] playlist component(ui, passed redux to component)
+- [x] playlist component(ui, redux passed to header component, rendered playlist)
 - [x]controllers component (ui)
 
-pass playlist to playlist component
-https://developer.spotify.com/console/get-current-user-playlists/
+- working on rendering tracks within playlist component
 
-api call in spotify.js?
-
-https://api.spotify.com/v1/users/{user_id}/playlists
-
--pass playlist dispatched into player component
 
 # Getting Started with Create React App
 
@@ -32,9 +25,4 @@ In the project directory, you can run:
 
 bares84355@heroulo.com
 Asdfg1234
-
-Client ID 4cfdccedba734c97a93964ca4921c124
-
-3:30
-spotify clone reactjs
 

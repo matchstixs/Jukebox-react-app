@@ -1,8 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from "@reduxjs/toolkit";
 // import individual reducer functions
-import userReducer from './components/slice/userSlice.js'
-import imageReducer from './components/slice/imageSlice.js'
-import playlistReducer from './components/slice/playlistSlice.js'
+import userReducer from "./components/slice/userSlice.js"
+import imageReducer from "./components/slice/imageSlice.js"
+import playlistReducer from "./components/slice/playlistSlice.js"
 
 export default configureStore({
   reducer: {

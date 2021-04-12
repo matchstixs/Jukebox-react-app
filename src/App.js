@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import SpotifyWebApi from 'spotify-web-api-js';
-import './App.css';
-import { getTokenFromResponse} from './spotify';
+import React, { useEffect, useState } from "react";
+import SpotifyWebApi from "spotify-web-api-js";
+import "./App.css";
+import { getTokenFromResponse} from "./spotify";
 // if no {} will import slice reducer function instead
-import { setUser } from './components/slice/userSlice.js';
-import { setImage } from './components/slice/imageSlice.js';
-import { setPlaylistTitle, setPlaylistImage, setPlaylistTracks } from './components/slice/playlistSlice.js';
-import { useDispatch } from 'react-redux';
+import { setUser } from "./components/slice/userSlice.js";
+import { setImage } from "./components/slice/imageSlice.js";
+import { setPlaylistTitle, setPlaylistImage, setPlaylistTracks } from "./components/slice/playlistSlice.js";
+import { useDispatch } from "react-redux";
 // pass components
-import Login from './components/Login.js';
-import Player from './components/Player.js';
+import Login from "./components/Login.js";
+import Player from "./components/Player.js";
 
 // spotify constructor that allows communication to and from
 const spotify = new SpotifyWebApi();
@@ -47,7 +47,7 @@ function App() {
         dispatch(setUser(user));
         dispatch(setImage(image));
       });
-      spotify.getPlaylist('37i9dQZF1DXcBWIGoYBM5M')
+      spotify.getPlaylist("37i9dQZF1DXcBWIGoYBM5M")
       .then((data) => {
       // data {
       // images[0].url

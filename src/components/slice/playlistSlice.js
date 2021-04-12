@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     image : [],
@@ -7,8 +7,8 @@ const initialState = {
 };
 
 const playlistSlice = createSlice({
-  // action name used in 'action types'
-  name: 'playlist',
+  // action name used in "action types"
+  name: "playlist",
   initialState,
   reducers: {
     setPlaylistImage: (state, action) => ({

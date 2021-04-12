@@ -1,5 +1,5 @@
 // slices are global states
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 // const [user, setUser] = useState([])
 // [state of user, state.name.push(action.name)] = initialState([])
@@ -22,8 +22,8 @@ const initialState = {
 
 // const action creator = slice
 const userSlice = createSlice({
-  // action name used in 'action types'
-  name: 'user',
+  // action name used in "action types"
+  name: "user",
   initialState,
   // write an object that has some reducer functions in it
   // reducers, function that recieves current state and action object, aka event listener 
@@ -31,7 +31,7 @@ const userSlice = createSlice({
   // If so, make a copy of the state, update the copy with new values, and return it
   reducers: {
   // action (state, action)
-  // state: current state of 'todo'
+  // state: current state of "todo"
   // action:  action being executed [payload]
     setUser: (state, action) => ({
       ...state,

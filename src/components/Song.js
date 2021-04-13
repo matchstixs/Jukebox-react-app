@@ -9,6 +9,7 @@ const Song = () => {
             {/* song image */}
             {/* song title */}
             {/* song artist */}
+            {/* song albumb info */}
 
 
         </div>

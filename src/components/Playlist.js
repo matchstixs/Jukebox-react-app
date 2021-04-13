@@ -3,28 +3,34 @@ import "./css/Playlist.css";
 import Controls from "./Controls.js";
 import Header from "./Header.js";
 
+
+
 const Playlist = ({ user, image, spotify, playlistImage, playlistTitle, playlistTracks }) => {
+console.log(playlistTracks)
 
   return (
-    <div>
+    <div className="playlist-component">
+      {/* header: search, profile_picture, username */}
+      < Header user={user} image={image} spotify={spotify}/>
 
-      <div className="playlist-component">
-          {/* header: search, profile_picture, username */}
-          < Header user={user} image={image} spotify={spotify}/>
+      {/* playlist info */}
+      <div className="playlist-info">
 
-          {/* playlist info */}
-          <div>
+        {/* playlist title */}
+        <h3 className="playlist-title"> { playlistTitle } </h3>
 
-            {/* playlist title */}
-            <h3 className="playlist-title"> { playlistTitle } </h3>
+        {/* playlist image */}
+        <img className="playlist-picture" src={ playlistImage } alt="playlist_picture" />
 
-            {/* playlist image */}
-            < img className="playlist-picture" src={ playlistImage } alt="playlist_picture" />
+        {/* playlist tracks */}
+        <div className="playlist-tracks">
+          <ol>
+          {playlistTracks?.map(function(data, idex){
+            return (<li key={idex}>{data.track.name}</li>)
+          })}
+          </ol>
+        </div>
 
-            {/* playlist tracks */}
-
-
-          </div>
       </div>
 
       <div className="controls-component">

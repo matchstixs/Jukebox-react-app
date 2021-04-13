@@ -10,11 +10,17 @@
 }
 
 .playlist-picture {
-    width: 50%;
-    height: auto;
+    width: 25%;
+    height: 25%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.playlist-tracks {
+    overflow: auto;
+    height: 300px;
+    width: 100%;
 }
 
 .controls-component {

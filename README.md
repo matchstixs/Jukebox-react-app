@@ -8,9 +8,9 @@ music player on react
 - [X] login (ui, auth integration)
 - [X] player (pass username to player component)
 - [x] playlist component(ui, redux passed to header component, rendered playlist)
-- [x]controllers component (ui)
+- [x] controllers component (ui)
+- [] songs component
 
-- working on rendering tracks within playlist component
 
 
 # Getting Started with Create React App
@@ -23,6 +23,6 @@ In the project directory, you can run:
 
 ### `npm start`
 
+testing account
 bares84355@heroulo.com
 Asdfg1234
-

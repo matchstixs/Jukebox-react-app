@@ -24,10 +24,8 @@
 }
 
 .controls-component {
-	position: fixed;
-	bottom: 0;
-	height: 65px;
-	width: 52%;
+    margin-top: 20px;
 	padding: 20px;
-    color: white
+    color: white;
+    border: 1px solid wheat;
 };

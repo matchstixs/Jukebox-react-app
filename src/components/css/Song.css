@@ -4,3 +4,28 @@
     height: 100vh;
 }
 
+.song-name {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.song-picture {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 50%;
+}
+
+.song-artist {
+    text-align: right;
+    margin-right: 60px;
+    padding: 15px;
+}
+
+.album-info {
+    display: flex;
+    justify-content: space-between;
+    max-height: 100%;
+    padding: 20px;
+}

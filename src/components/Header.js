@@ -5,13 +5,13 @@ import SearchIcon from "@material-ui/icons/Search";
 function Header({ user, image }) {
     return (
         <div className="header">
-            <div className="header_left">
+            <div className="header-left">
             <SearchIcon />
             <input type="text" placeholder="Search" />
             </div>
 
-            <div className="header_right">
-            < img className="profile_picture" src={ image } alt="profile_picture" />
+            <div className="header-right">
+            < img className="profile-picture" src={ image } alt="profileimg" />
             <h4>{ user }</h4>
             </div>
         </div>

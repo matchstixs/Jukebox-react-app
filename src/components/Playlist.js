@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./css/Playlist.css";
 import Controls from "./Controls.js";
 import Header from "./Header.js";
@@ -6,7 +6,6 @@ import Header from "./Header.js";
 
 
 const Playlist = ({ user, image, spotify, playlistImage, playlistTitle, playlistTracks }) => {
-console.log(playlistTracks)
 
   return (
     <div className="playlist-component">
@@ -25,8 +24,8 @@ console.log(playlistTracks)
         {/* playlist tracks */}
         <div className="playlist-tracks">
           <ol>
-          {playlistTracks?.map(function(data, idex){
-            return (<li key={idex}>{data.track.name}</li>)
+          {playlistTracks?.map(function(data, index){
+            return (<li key={index}>{data.track.name}</li>)
           })}
           </ol>
         </div>

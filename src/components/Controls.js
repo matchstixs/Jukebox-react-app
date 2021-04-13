@@ -1,4 +1,5 @@
 import React from "react";
+import "./css/Controls.css";
 // materialui icons
 import ShuffleIcon from "@material-ui/icons/Shuffle";
 import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
@@ -12,7 +13,8 @@ import { Slider, Grid } from "@material-ui/core";
 
 const Controls = () => {
     return (
-        <div>
+        <div className="controller-component">
+
         <div className="controls">
                 {/* suffle song */}
                 < ShuffleIcon className="shuffle-icon" />
@@ -43,7 +45,6 @@ const Controls = () => {
                 </Grid>
             </Grid>
         </div>
-
             
         </div>
     );

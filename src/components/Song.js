@@ -1,15 +1,25 @@
 import React from "react"
 import "./css/Song.css"
 
-const Song = () => {
+const Song = ({ image, title, artist, album, date }) => {
+
     return (
         <div className="song-component">
-            <h1>THIS IS SONG COMPONENT</h1>
+
+            {/* song title */}
+            <h1 className="song-name">{title}</h1>
 
             {/* song image */}
-            {/* song title */}
+            < img className="song-picture" src={ image } alt="songimg" />
+
             {/* song artist */}
-            {/* song albumb info */}
+            <h3 className="song-artist">{artist}</h3>
+            
+            {/* song album info */}
+            <div className="album-info">
+            <h4 className="album-name">Album: {album}</h4>
+            <h5 className="album-date">{date}</h5>
+            </div>
 
 
         </div>

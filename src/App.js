@@ -6,6 +6,7 @@ import { getTokenFromResponse} from "./spotify";
 import { setUser } from "./components/slice/userSlice.js";
 import { setImage } from "./components/slice/imageSlice.js";
 import { setPlaylistTitle, setPlaylistImage, setPlaylistTracks } from "./components/slice/playlistSlice.js";
+import { setSongImage, setSongTitle, setSongArtist, setSongAlbum, setSongDate} from "./components/slice/songSlice.js";
 import { useDispatch } from "react-redux";
 // pass components
 import Login from "./components/Login.js";
@@ -63,16 +64,25 @@ function App() {
       dispatch(setPlaylistTitle(playlistTitle));
       dispatch(setPlaylistImage(playlistImage));
       dispatch(setPlaylistTracks(playlistTracks));
+
+      const trackImage = data.tracks.items[0].track.album.images[0].url;
+      const trackTitle = data.tracks.items[0].track.album.name;
+      const trackArtist = data.tracks.items[0].track.artists[0].name;
+      const albumType = data.tracks.items[0].track.album.album_type;
+      const albumDate = data.tracks.items[0].track.album.release_date;
+      // console.log(trackImage)
+      // console.log(trackTitle)
+      // console.log(trackArtist)
+      // console.log(albumType)
+      // console.log(albumDate)
+      dispatch(setSongImage(trackImage));
+      dispatch(setSongTitle(trackTitle));
+      dispatch(setSongArtist(trackArtist));
+      dispatch(setSongAlbum(albumType));
+      dispatch(setSongDate(albumDate));
       });
 
 
-
-      // spotify.getUserPlaylists().then((playlists) => {
-      // console.log(playlists)
-
-
-      // dispatch(setPlaylists(playlists))
-      // });
     }
   }, [token, dispatch]);
 

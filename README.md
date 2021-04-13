@@ -16,7 +16,7 @@
 - control functionality
 - ui improvements
 
-### 'testing account bares84355@heroulo.com Asdfg1234'
+### testing account: bares84355@heroulo.com Asdfg1234
 
 
 # Getting Started with Create React App
